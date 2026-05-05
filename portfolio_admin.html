@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>FJB — Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
+<style>
+  *{font-family:'Inter',sans-serif;box-sizing:border-box}
+  body{margin:0;background:#050a14;color:white}
+  .gradient-text{background:linear-gradient(135deg,#22d3ee,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+  .inp{width:100%;background:#0a1628;border:1px solid #1e3a4a;border-radius:12px;padding:10px 14px;font-size:14px;color:#d1d5db;outline:none;transition:border-color .2s}
+  .inp:focus{border-color:#22d3ee}
+  .inp-lg{resize:none}
+  .btn-p{background:linear-gradient(135deg,#06b6d4,#3b82f6);border:none;border-radius:12px;padding:10px 20px;font-weight:700;color:white;cursor:pointer;transition:transform .2s}
+  .btn-p:hover{transform:scale(1.03)}
+  .btn-d{background:#7f1d1d;border:1px solid #ef4444;border-radius:8px;padding:6px 12px;font-size:12px;color:#fca5a5;cursor:pointer}
+  .btn-d:hover{background:#991b1b}
+  .sb{background:#0a1628;border:1px solid #1e3a4a;border-radius:16px;padding:24px;margin-bottom:24px}
+  .tab{padding:10px 20px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;color:#6b7280;background:none;border:none}
+  .tab.on{background:rgba(6,182,212,.15);color:#22d3ee;border:1px solid rgba(6,182,212,.3)}
+  .panel{display:none}
+  .panel.on{display:block}
+  .cdot{width:28px;height:28px;border-radius:99px;cursor:pointer;border:2px solid transparent;transition:all .2s;display:inline-block}
+  .cdot.sel{border-color:white;transform:scale(1.2)}
+  .icob{width:38px;height:38px;border-radius:10px;font-size:18px;cursor:pointer;background:#1f2937;border:2px solid transparent;transition:all .2s}
+  .icob.sel{border-color:#22d3ee;background:#0e4155}
+  #notif{position:fixed;top:76px;right:20px;z-index:300;padding:14px 22px;border-radius:12px;font-weight:700;font-size:13px;background:#065f46;border:1px solid #10b981;color:#6ee7b7;display:none;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+  ::-webkit-scrollbar{width:5px}
+  ::-webkit-scrollbar-track{background:#050a14}
+  ::-webkit-scrollbar-thumb{background:#1e3a4a;border-radius:3px}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="fixed top-0 left-0 right-0 z-50 bg-[#050a14]/98 backdrop-blur border-b border-cyan-900/30 px-6 py-3 flex items-center justify-between">
+  <div class="flex items-center gap-3">
+    <span class="text-lg font-black tracking-widest text-cyan-400">FJB.</span>
+    <span class="text-xs font-bold bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full border border-cyan-500/30">🔐 ADMIN</span>
+  </div>
+  <div class="flex items-center gap-3">
+    <a href="index.html" target="_blank" class="text-xs text-gray-400 hover:text-cyan-400 transition-colors flex items-center gap-1">👁️ Voir le portfolio public</a>
+    <button onclick="saveAll()" class="btn-p px-6 py-2 text-sm">💾 Tout sauvegarder</button>
+  </div>
+</div>
+<div id="notif"></div>
+
+<div class="pt-20 max-w-5xl mx-auto px-6 py-8">
+  <div class="mb-8">
+    <h1 class="text-3xl font-black">Admin <span class="gradient-text">Dashboard</span></h1>
+    <p class="text-gray-500 text-sm mt-1">Modifie tout ton portfolio. Clique "💾 Tout sauvegarder" puis rafraîchis index.html pour voir les changements.</p>
+  </div>
+
+  <!-- TABS -->
+  <div class="flex gap-2 flex-wrap mb-8 bg-[#0a1628] p-2 rounded-xl border border-[#1e3a4a]">
+    <button class="tab on" onclick="switchTab('profil',this)">👤 Profil</button>
+    <button class="tab" onclick="switchTab('skills',this)">⚡ Compétences</button>
+    <button class="tab" onclick="switchTab('projects',this)">🚀 Projets</button>
+    <button class="tab" onclick="switchTab('certs',this)">🏆 Certifications</button>
+    <button class="tab" onclick="switchTab('timeline',this)">📅 Parcours</button>
+    <button class="tab" onclick="switchTab('contact',this)">📞 Contact</button>
+  </div>
+
+  <!-- PROFIL -->
+  <div id="panel-profil" class="panel on">
+    <div class="sb">
+      <h2 class="font-black text-lg mb-4 text-cyan-400">👤 Identité & Héro</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div><label class="text-xs text-gray-400 uppercase tracking-widest mb-1 block">Prénom (affiché en grand)</label><input id="p-fn" class="inp" value="FLORENT JAURÈS"/></div>
+        <div><label class="text-xs text-gray-400 uppercase tracking-widest mb-1 block">Nom (affiché en grand)</label><input id="p-ln" class="inp" value="BOLOU"/></div>
+        <div><label class="text-xs text-gray-400 uppercase tracking-widest mb-1 block">Badge héro</label><input id="p-badge" class="inp" value="🏆 Vainqueur JA Social Equity 2026"/></div>
+        <div><label class="text-xs text-gray-400 uppercase tracking-widest mb-1 block">Titres animés (séparés par |)</label><input id="p-titles" class="inp" value="Finance Digitale|Data Analyst|Vibe Coder|FinTech Builder"/></div>
+        <div class="md:col-span-2"><label class="text-xs text-gray-400 uppercase tracking-widest mb-1 block">Bio / Description principale</label><textarea id="p-bio" class="inp inp-lg" rows="3">Étudiant en Finance Digitale à l'EMSP Abidjan. Je conçois des outils agiles qui modernisent les services financiers — de l'idée au produit déployé.</textarea></div>
+        <div><label class="text-xs text-gray-400 uppercase tracking-widest mb-1 block">URL de ta photo</label><input id="p-photo" class="inp" value="https://media.base44.com/images/public/69e526e09a2bb27bdd7bc3a6/70906449d_IMG_3588.jpeg"/></div>
+        <div><label class="text-xs text-gray-400 uppercase tracking-widest mb-1 block">Chemin ou URL du CV (PDF)</label><input id="p-cv" class="inp" value="CV_Bolou_Florent_Jaures.pdf"/></div>
+      </div>
+    </div>
+    <div class="sb">
+      <h2 class="font-black text-lg mb-4 text-cyan-400">📊 Statistiques héro</h2>
+      <p class="text-xs text-gray-500 mb-4">Ces 3 chiffres s'affichent en animation sur la page d'accueil</p>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div><label class="text-xs text-gray-400 mb-1 block">Valeur 1</label><input id="s1v" class="inp" type="number" value="3"/></div>
+        <div><label class="text-xs text-gray-400 mb-1 block">Suffixe 1 (ex: +)</label><input id="s1s" class="inp" value="+"/></div>
+        <div><label class="text-xs text-gray-400 mb-1 block">Label 1</label><input id="s1l" class="inp" value="Projets déployés"/></div>
+        <div><label class="text-xs text-gray-400 mb-1 block">Valeur 2</label><input id="s2v" class="inp" type="number" value="2"/></div>
+        <div><label class="text-xs text-gray-400 mb-1 block">Suffixe 2</label><input id="s2s" class="inp" value=" ans"/></div>
+        <div><label class="text-xs text-gray-400 mb-1 block">Label 2</label><input id="s2l" class="inp" value="En Finance Digitale"/></div>
+        <div><label class="text-xs text-gray-400 mb-1 block">Valeur 3</label><input id="s3v" class="inp" type="number" value="8"/></div>
+        <div><label class="text-xs text-gray-400 mb-1 block">Suffixe 3</label><input id="s3s" class="inp" value="+"/></div>
+        <div><label class="text-xs text-gray-400 mb-1 block">Label 3</label><input id="s3l" class="inp" value="Compétences clés"/></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SKILLS -->
+  <div id="panel-skills" class="panel">
+    <div class="sb">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="font-black text-lg text-cyan-400">⚡ Compétences techniques</h2>
+        <button onclick="addSkill()" class="btn-p text-sm px-4 py-2">➕ Ajouter</button>
+      </div>
+      <div id="skills-list" class="flex flex-col gap-3"></div>
+    </div>
+    <div class="sb">
+      <h2 class="font-black text-lg mb-3 text-cyan-400">🏷️ Soft Skills & Langues</h2>
+      <p class="text-xs text-gray-500 mb-2">Séparés par des virgules</p>
+      <textarea id="soft" class="inp inp-lg" rows="2">Innovation 🚀, Agilité ⚡, Adaptabilité 🔄, Gestion du temps ⏱️, Français 🇫🇷, Anglais 🇬🇧, Mandarin 🇨🇳, Bénévolat ❤️</textarea>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <div id="panel-projects" class="panel">
+    <div class="sb">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="font-black text-lg text-cyan-400">🚀 Projets & Expériences</h2>
+        <button onclick="addProject()" class="btn-p text-sm px-4 py-2">➕ Ajouter</button>
+      </div>
+      <div id="projects-list" class="flex flex-col gap-5"></div>
+    </div>
+  </div>
+
+  <!-- CERTS -->
+  <div id="panel-certs" class="panel">
+    <div class="sb">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="font-black text-lg text-cyan-400">🏆 Certifications</h2>
+        <button onclick="addCert()" class="btn-p text-sm px-4 py-2">➕ Ajouter</button>
+      </div>
+      <div id="certs-list" class="flex flex-col gap-5"></div>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div id="panel-timeline" class="panel">
+    <div class="sb">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="font-black text-lg text-cyan-400">📅 Parcours / Timeline</h2>
+        <button onclick="addTimeline()" class="btn-p text-sm px-4 py-2">➕ Ajouter</button>
+      </div>
+      <div id="timeline-list" class="flex flex-col gap-4"></div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div id="panel-contact" class="panel">
+    <div class="sb">
+      <h2 class="font-black text-lg mb-4 text-cyan-400">📞 Informations de contact</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div><label class="text-xs text-gray-400 mb-1 block">Email</label><input id="c-email" class="inp" value="florentjauresb@gmail.com"/></div>
+        <div><label class="text-xs text-gray-400 mb-1 block">Téléphone</label><input id="c-phone" class="inp" value="+225 08 88 58 00 77"/></div>
+        <div><label class="text-xs text-gray-400 mb-1 block">URL LinkedIn</label><input id="c-li" class="inp" value="https://linkedin.com/in/florent-jaurès-bolou-356b9536b"/></div>
+        <div><label class="text-xs text-gray-400 mb-1 block">Ville / Localisation</label><input id="c-city" class="inp" value="Abidjan-Cocody, Côte d'Ivoire 🇨🇮"/></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════════════════════
+   CONSTANTES
+══════════════════════════════════════════ */
+const COLORS=[
+  {label:"Or",     grad:"from-yellow-400 to-orange-500",accent:"text-yellow-400",dot:"linear-gradient(135deg,#facc15,#f97316)"},
+  {label:"Cyan",   grad:"from-cyan-500 to-blue-600",    accent:"text-cyan-400",  dot:"linear-gradient(135deg,#06b6d4,#2563eb)"},
+  {label:"Vert",   grad:"from-emerald-400 to-teal-600", accent:"text-emerald-400",dot:"linear-gradient(135deg,#34d399,#0d9488)"},
+  {label:"Violet", grad:"from-purple-500 to-pink-600",  accent:"text-purple-400",dot:"linear-gradient(135deg,#a855f7,#db2777)"},
+  {label:"Rose",   grad:"from-pink-500 to-rose-600",    accent:"text-pink-400",  dot:"linear-gradient(135deg,#ec4899,#e11d48)"},
+  {label:"Bleu",   grad:"from-blue-500 to-indigo-600",  accent:"text-blue-400",  dot:"linear-gradient(135deg,#3b82f6,#4f46e5)"},
+];
+const ICONS=["🏆","🎓","📜","🔖","💡","🚀","📊","💻","🌐","🏅","🎯","📱","🛡️","🔬","📈","🌟","💼","🏦","⭐","📚"];
+const CATS=["Dev","Data","Finance","Design","Management","Autre"];
+
+/* ══════════════════════════════════════════
+   BASE DE DONNÉES PAR DÉFAUT
+══════════════════════════════════════════ */
+let DB = {
+  profil:{
+    fn:"FLORENT JAURÈS", ln:"BOLOU",
+    badge:"🏆 Vainqueur JA Social Equity 2026",
+    titles:"Finance Digitale|Data Analyst|Vibe Coder|FinTech Builder",
+    bio:"Étudiant en Finance Digitale à l'EMSP Abidjan. Je conçois des outils agiles qui modernisent les services financiers — de l'idée au produit déployé.",
+    photo:"https://media.base44.com/images/public/69e526e09a2bb27bdd7bc3a6/70906449d_IMG_3588.jpeg",
+    cv:"CV_Bolou_Florent_Jaures.pdf",
+    stats:[
+      {v:3,s:"+",  l:"Projets déployés"},
+      {v:2,s:" ans",l:"En Finance Digitale"},
+      {v:8,s:"+",  l:"Compétences clés"}
+    ]
+  },
+  contact:{email:"florentjauresb@gmail.com",phone:"+225 08 88 58 00 77",li:"https://linkedin.com/in/florent-jaurès-bolou-356b9536b",city:"Abidjan-Cocody, Côte d'Ivoire 🇨🇮"},
+  skills:[
+    {id:1,name:"Python",level:75,cat:"Dev"},
+    {id:2,name:"SQL / Supabase",level:85,cat:"Dev"},
+    {id:3,name:"Power BI",level:70,cat:"Data"},
+    {id:4,name:"Excel & TCD",level:75,cat:"Data"},
+    {id:5,name:"Vibe Coding (Lovable/Base44)",level:90,cat:"Dev"},
+    {id:6,name:"Analyse Financière",level:88,cat:"Finance"},
+    {id:7,name:"SYSCOHADA / Fiscalité",level:80,cat:"Finance"},
+    {id:8,name:"Gestion des Risques",level:78,cat:"Finance"}
+  ],
+  soft:"Innovation 🚀, Agilité ⚡, Adaptabilité 🔄, Gestion du temps ⏱️, Français 🇫🇷, Anglais 🇬🇧, Mandarin 🇨🇳, Bénévolat ❤️",
+  projects:[
+    {id:1,icon:"📊",grad:"from-cyan-500 to-blue-600",accent:"text-cyan-400",title:"SanliFlows",subtitle:"Dashboard Financier",desc:"Architecture d'un dashboard financier intelligent avec Supabase et requêtes SQL avancées. Visualisation de KPIs en temps réel pour le pilotage de trésorerie.",tags:"Supabase, SQL, Python, Data viz",link:""},
+    {id:2,icon:"🛍️",grad:"from-purple-500 to-pink-600",accent:"text-purple-400",title:"Sanlishop",subtitle:"Marketplace E-commerce",desc:"Développement d'une marketplace dédiée à l'artisanat africain avec flux de paiement intégré. Architecture pensée pour l'inclusion financière.",tags:"No-code, Paiement digital, UX/UI",link:""},
+    {id:3,icon:"🏦",grad:"from-emerald-500 to-teal-600",accent:"text-emerald-400",title:"Stage Comptable",subtitle:"Expérience Pro — Abidjan",desc:"Saisie des écritures comptables, préparation des états financiers et optimisation des procédures de clôture.",tags:"Comptabilité, États financiers, SYSCOHADA",link:""}
+  ],
+  certs:[
+    {id:1,icon:"🏆",grad:"from-yellow-400 to-orange-500",accent:"text-yellow-400",title:"Prix JA Social Equity",org:"Junior Achievement CI",year:"2026",desc:"Vainqueur du concours d'innovation JA Social Equity 2026.",tags:"Innovation, Social Impact",link:""},
+    {id:2,icon:"🎓",grad:"from-cyan-500 to-blue-600",accent:"text-cyan-400",title:"Licence 3 Finance Digitale",org:"EMSP Abidjan",year:"2025–2026",desc:"Spécialisation en systèmes de paiement électronique et banque digitale.",tags:"Banque Digitale, Monétique",link:""},
+    {id:3,icon:"📜",grad:"from-emerald-400 to-teal-600",accent:"text-emerald-400",title:"Baccalauréat Série D",org:"Mention Bien",year:"2023",desc:"Diplôme du Baccalauréat scientifique obtenu avec la mention Bien.",tags:"Sciences, Mention Bien",link:""}
+  ],
+  timeline:[
+    {id:1,year:"2023",label:"Baccalauréat Série D",sub:"Mention Bien",icon:"🎓",grad:"from-cyan-500 to-blue-700",accent:"text-cyan-400"},
+    {id:2,year:"2023–2025",label:"Licence 1 & 2 — Finance Digitale",sub:"EMSP Abidjan",icon:"📚",grad:"from-cyan-500 to-blue-700",accent:"text-cyan-400"},
+    {id:3,year:"2024",label:"Stage Comptable",sub:"Abidjan — 3 mois",icon:"💼",grad:"from-cyan-500 to-blue-700",accent:"text-cyan-400"},
+    {id:4,year:"2025",label:"SanliFlows & Sanlishop",sub:"Projets Data & E-commerce",icon:"🚀",grad:"from-cyan-500 to-blue-700",accent:"text-cyan-400"},
+    {id:5,year:"2026",label:"Vainqueur JA Social Equity",sub:"Concours d'Innovation",icon:"🏆",grad:"from-yellow-400 to-orange-500",accent:"text-yellow-400"},
+    {id:6,year:"2025–2026",label:"Licence 3 — Finance Digitale",sub:"Spécialisation Banque Digitale · EMSP",icon:"⭐",grad:"from-purple-500 to-pink-600",accent:"text-purple-400"}
+  ]
+};
+
+/* ══════════════════════════════════════════
+   LOAD / SAVE — CLÉ UNIQUE fjb_data
+══════════════════════════════════════════ */
+function loadDB() {
+  try {
+    const raw = localStorage.getItem('fjb_data');
+    if (raw) DB = JSON.parse(raw);
+  } catch(e) { console.warn('Erreur load:', e); }
+}
+
+function saveDB() {
+  try {
+    // Clé unique fjb_data — lue par index.html
+    localStorage.setItem('fjb_data', JSON.stringify(DB));
+  } catch(e) { console.warn('Erreur save:', e); }
+}
+
+loadDB();
+
+/* ══════════════════════════════════════════
+   UI HELPERS
+══════════════════════════════════════════ */
+function notify(m) {
+  const n = document.getElementById('notif');
+  n.textContent = m;
+  n.style.display = 'block';
+  setTimeout(() => n.style.display='none', 3500);
+}
+function switchTab(name, btn) {
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(b=>b.classList.remove('on'));
+  document.getElementById('panel-'+name).classList.add('on');
+  btn.classList.add('on');
+}
+function cpHTML(selGrad, pfx) {
+  return COLORS.map((c,i)=>`<div class="cdot${c.grad===selGrad?' sel':''}" style="background:${c.dot};margin:2px" title="${c.label}" onclick="selColor('${pfx}',${i})"></div>`).join('');
+}
+function icHTML(selIc, pfx) {
+  return ICONS.map(ic=>`<button type="button" class="icob${ic===selIc?' sel':''}" onclick="selIcon('${pfx}','${ic}')">${ic}</button>`).join('');
+}
+function selColor(pfx, idx) {
+  const c = COLORS[idx];
+  document.querySelectorAll(`[data-pfx="${pfx}"] .cdot`).forEach((d,i)=>d.classList.toggle('sel',i===idx));
+  document.querySelector(`[data-pfx="${pfx}"] [name=grad]`).value = c.grad;
+  document.querySelector(`[data-pfx="${pfx}"] [name=accent]`).value = c.accent;
+}
+function selIcon(pfx, ic) {
+  document.querySelectorAll(`[data-pfx="${pfx}"] .icob`).forEach(b=>b.classList.toggle('sel',b.textContent===ic));
+  document.querySelector(`[data-pfx="${pfx}"] [name=icon]`).value = ic;
+}
+
+/* ══════════════════════════════════════════
+   SKILLS
+══════════════════════════════════════════ */
+function renderSkills() {
+  const el = document.getElementById('skills-list');
+  el.innerHTML = '';
+  DB.skills.forEach(s => {
+    el.insertAdjacentHTML('beforeend', `
+      <div class="flex items-center gap-3 bg-[#060e1c] border border-[#1e3a4a] rounded-xl p-3 flex-wrap">
+        <input class="inp" style="flex:1;min-width:140px" value="${s.name}" onchange="DB.skills.find(x=>x.id===${s.id}).name=this.value"/>
+        <input type="number" min="0" max="100" class="inp" style="width:60px" value="${s.level}" onchange="DB.skills.find(x=>x.id===${s.id}).level=+this.value"/>
+        <span class="text-gray-500 text-xs">%</span>
+        <select class="inp" style="width:105px" onchange="DB.skills.find(x=>x.id===${s.id}).cat=this.value">
+          ${CATS.map(c=>`<option${c===s.cat?' selected':''}>${c}</option>`).join('')}
+        </select>
+        <button class="btn-d" onclick="DB.skills=DB.skills.filter(x=>x.id!==${s.id});renderSkills()">🗑️</button>
+      </div>`);
+  });
+}
+function addSkill() { DB.skills.push({id:Date.now(),name:"Nouvelle compétence",level:70,cat:"Dev"}); renderSkills(); }
+renderSkills();
+if (DB.soft) document.getElementById('soft').value = DB.soft;
+
+/* ══════════════════════════════════════════
+   PROJECTS
+══════════════════════════════════════════ */
+function renderProjects() {
+  const el = document.getElementById('projects-list');
+  el.innerHTML = '';
+  DB.projects.forEach(p => {
+    const pfx = 'p'+p.id;
+    el.insertAdjacentHTML('beforeend', `
+      <div class="bg-[#060e1c] border border-[#1e3a4a] rounded-xl p-4" data-pfx="${pfx}">
+        <div class="flex justify-between items-center mb-3">
+          <span class="font-bold text-white">${p.title}</span>
+          <button class="btn-d" onclick="DB.projects=DB.projects.filter(x=>x.id!==${p.id});renderProjects()">🗑️</button>
+        </div>
+        <div class="flex flex-wrap gap-1 mb-3">${icHTML(p.icon,pfx)}<input type="hidden" name="icon" value="${p.icon}"/></div>
+        <div class="flex flex-wrap gap-2 mb-3">${cpHTML(p.grad,pfx)}<input type="hidden" name="grad" value="${p.grad}"/><input type="hidden" name="accent" value="${p.accent}"/></div>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div><label class="text-xs text-gray-500 mb-1 block">Titre</label><input class="inp" value="${p.title}" onchange="DB.projects.find(x=>x.id===${p.id}).title=this.value"/></div>
+          <div><label class="text-xs text-gray-500 mb-1 block">Sous-titre</label><input class="inp" value="${p.subtitle}" onchange="DB.projects.find(x=>x.id===${p.id}).subtitle=this.value"/></div>
+          <div class="md:col-span-2"><label class="text-xs text-gray-500 mb-1 block">Description</label><textarea class="inp inp-lg" rows="2" onchange="DB.projects.find(x=>x.id===${p.id}).desc=this.value">${p.desc}</textarea></div>
+          <div><label class="text-xs text-gray-500 mb-1 block">Tags (virgule)</label><input class="inp" value="${p.tags}" onchange="DB.projects.find(x=>x.id===${p.id}).tags=this.value"/></div>
+          <div><label class="text-xs text-gray-500 mb-1 block">Lien (optionnel)</label><input class="inp" value="${p.link||''}" onchange="DB.projects.find(x=>x.id===${p.id}).link=this.value"/></div>
+        </div>
+      </div>`);
+  });
+}
+function addProject() { DB.projects.push({id:Date.now(),icon:"🚀",grad:"from-cyan-500 to-blue-600",accent:"text-cyan-400",title:"Nouveau projet",subtitle:"",desc:"",tags:"",link:""}); renderProjects(); }
+renderProjects();
+
+/* ══════════════════════════════════════════
+   CERTS
+══════════════════════════════════════════ */
+function renderCerts() {
+  const el = document.getElementById('certs-list');
+  el.innerHTML = '';
+  DB.certs.forEach(c => {
+    const pfx = 'c'+c.id;
+    el.insertAdjacentHTML('beforeend', `
+      <div class="bg-[#060e1c] border border-[#1e3a4a] rounded-xl p-4" data-pfx="${pfx}">
+        <div class="flex justify-between items-center mb-3">
+          <span class="font-bold text-white">${c.title}</span>
+          <button class="btn-d" onclick="DB.certs=DB.certs.filter(x=>x.id!==${c.id});renderCerts()">🗑️</button>
+        </div>
+        <div class="flex flex-wrap gap-1 mb-3">${icHTML(c.icon,pfx)}<input type="hidden" name="icon" value="${c.icon}"/></div>
+        <div class="flex flex-wrap gap-2 mb-3">${cpHTML(c.grad,pfx)}<input type="hidden" name="grad" value="${c.grad}"/><input type="hidden" name="accent" value="${c.accent}"/></div>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div><label class="text-xs text-gray-500 mb-1 block">Titre</label><input class="inp" value="${c.title}" onchange="DB.certs.find(x=>x.id===${c.id}).title=this.value"/></div>
+          <div><label class="text-xs text-gray-500 mb-1 block">Organisation</label><input class="inp" value="${c.org}" onchange="DB.certs.find(x=>x.id===${c.id}).org=this.value"/></div>
+          <div><label class="text-xs text-gray-500 mb-1 block">Année</label><input class="inp" value="${c.year}" onchange="DB.certs.find(x=>x.id===${c.id}).year=this.value"/></div>
+          <div><label class="text-xs text-gray-500 mb-1 block">Tags (virgule)</label><input class="inp" value="${c.tags}" onchange="DB.certs.find(x=>x.id===${c.id}).tags=this.value"/></div>
+          <div class="md:col-span-2"><label class="text-xs text-gray-500 mb-1 block">Description</label><textarea class="inp inp-lg" rows="2" onchange="DB.certs.find(x=>x.id===${c.id}).desc=this.value">${c.desc}</textarea></div>
+          <div class="md:col-span-2"><label class="text-xs text-gray-500 mb-1 block">Lien PDF du certificat</label><input class="inp" value="${c.link||''}" onchange="DB.certs.find(x=>x.id===${c.id}).link=this.value"/></div>
+        </div>
+      </div>`);
+  });
+}
+function addCert() { DB.certs.push({id:Date.now(),icon:"🏆",grad:"from-yellow-400 to-orange-500",accent:"text-yellow-400",title:"Nouveau certificat",org:"",year:"2026",desc:"",tags:"",link:""}); renderCerts(); }
+renderCerts();
+
+/* ══════════════════════════════════════════
+   TIMELINE
+══════════════════════════════════════════ */
+function renderTimeline() {
+  const el = document.getElementById('timeline-list');
+  el.innerHTML = '';
+  DB.timeline.forEach(t => {
+    const pfx = 't'+t.id;
+    el.insertAdjacentHTML('beforeend', `
+      <div class="bg-[#060e1c] border border-[#1e3a4a] rounded-xl p-4" data-pfx="${pfx}">
+        <div class="flex justify-between items-center mb-3">
+          <span class="font-bold text-white">${t.label}</span>
+          <button class="btn-d" onclick="DB.timeline=DB.timeline.filter(x=>x.id!==${t.id});renderTimeline()">🗑️</button>
+        </div>
+        <div class="flex flex-wrap gap-1 mb-3">${icHTML(t.icon,pfx)}<input type="hidden" name="icon" value="${t.icon}"/></div>
+        <div class="flex flex-wrap gap-2 mb-3">${cpHTML(t.grad,pfx)}<input type="hidden" name="grad" value="${t.grad}"/><input type="hidden" name="accent" value="${t.accent}"/></div>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div><label class="text-xs text-gray-500 mb-1 block">Période / Année</label><input class="inp" value="${t.year}" onchange="DB.timeline.find(x=>x.id===${t.id}).year=this.value"/></div>
+          <div><label class="text-xs text-gray-500 mb-1 block">Titre</label><input class="inp" value="${t.label}" onchange="DB.timeline.find(x=>x.id===${t.id}).label=this.value"/></div>
+          <div class="md:col-span-2"><label class="text-xs text-gray-500 mb-1 block">Sous-titre</label><input class="inp" value="${t.sub}" onchange="DB.timeline.find(x=>x.id===${t.id}).sub=this.value"/></div>
+        </div>
+      </div>`);
+  });
+}
+function addTimeline() { DB.timeline.push({id:Date.now(),year:"2026",label:"Nouvel événement",sub:"",icon:"⭐",grad:"from-cyan-500 to-blue-700",accent:"text-cyan-400"}); renderTimeline(); }
+renderTimeline();
+
+/* ══════════════════════════════════════════
+   SAVE ALL — écrit tout dans fjb_data
+══════════════════════════════════════════ */
+function saveAll() {
+  // 1. Profil
+  DB.profil.fn    = document.getElementById('p-fn').value.trim();
+  DB.profil.ln    = document.getElementById('p-ln').value.trim();
+  DB.profil.badge = document.getElementById('p-badge').value.trim();
+  DB.profil.titles= document.getElementById('p-titles').value.trim();
+  DB.profil.bio   = document.getElementById('p-bio').value.trim();
+  DB.profil.photo = document.getElementById('p-photo').value.trim();
+  DB.profil.cv    = document.getElementById('p-cv').value.trim();
+  DB.profil.stats = [
+    {v:+document.getElementById('s1v').value, s:document.getElementById('s1s').value, l:document.getElementById('s1l').value},
+    {v:+document.getElementById('s2v').value, s:document.getElementById('s2s').value, l:document.getElementById('s2l').value},
+    {v:+document.getElementById('s3v').value, s:document.getElementById('s3s').value, l:document.getElementById('s3l').value},
+  ];
+
+  // 2. Contact
+  DB.contact = {
+    email: document.getElementById('c-email').value.trim(),
+    phone: document.getElementById('c-phone').value.trim(),
+    li:    document.getElementById('c-li').value.trim(),
+    city:  document.getElementById('c-city').value.trim(),
+  };
+
+  // 3. Soft skills
+  DB.soft = document.getElementById('soft').value.trim();
+
+  // 4. Sync icône + couleur depuis le DOM pour projects/certs/timeline
+  DB.projects.forEach(item => {
+    const pfx = 'p'+item.id;
+    const el = document.querySelector(`[data-pfx="${pfx}"]`);
+    if (el) {
+      item.icon  = el.querySelector('[name=icon]').value;
+      item.grad  = el.querySelector('[name=grad]').value;
+      item.accent= el.querySelector('[name=accent]').value;
+    }
+  });
+  DB.certs.forEach(item => {
+    const pfx = 'c'+item.id;
+    const el = document.querySelector(`[data-pfx="${pfx}"]`);
+    if (el) {
+      item.icon  = el.querySelector('[name=icon]').value;
+      item.grad  = el.querySelector('[name=grad]').value;
+      item.accent= el.querySelector('[name=accent]').value;
+    }
+  });
+  DB.timeline.forEach(item => {
+    const pfx = 't'+item.id;
+    const el = document.querySelector(`[data-pfx="${pfx}"]`);
+    if (el) {
+      item.icon  = el.querySelector('[name=icon]').value;
+      item.grad  = el.querySelector('[name=grad]').value;
+      item.accent= el.querySelector('[name=accent]').value;
+    }
+  });
+
+  // 5. Sauvegarde dans fjb_data (clé unique lue par index.html)
+  saveDB();
+  notify('✅ Sauvegardé dans fjb_data ! Ouvre index.html et rafraîchis pour voir les changements.');
+}
+
+/* ══════════════════════════════════════════
+   INIT FORMULAIRES depuis DB chargé
+══════════════════════════════════════════ */
+function initForms() {
+  const p = DB.profil || {};
+  const c = DB.contact || {};
+  if (p.fn)     document.getElementById('p-fn').value     = p.fn;
+  if (p.ln)     document.getElementById('p-ln').value     = p.ln;
+  if (p.badge)  document.getElementById('p-badge').value  = p.badge;
+  if (p.titles) document.getElementById('p-titles').value = p.titles;
+  if (p.bio)    document.getElementById('p-bio').value    = p.bio;
+  if (p.photo)  document.getElementById('p-photo').value  = p.photo;
+  if (p.cv)     document.getElementById('p-cv').value     = p.cv;
+  if (p.stats) {
+    p.stats.forEach((s,i) => {
+      document.getElementById(`s${i+1}v`).value = s.v;
+      document.getElementById(`s${i+1}s`).value = s.s;
+      document.getElementById(`s${i+1}l`).value = s.l;
+    });
+  }
+  if (c.email) document.getElementById('c-email').value = c.email;
+  if (c.phone) document.getElementById('c-phone').value = c.phone;
+  if (c.li)    document.getElementById('c-li').value    = c.li;
+  if (c.city)  document.getElementById('c-city').value  = c.city;
+  if (DB.soft) document.getElementById('soft').value    = DB.soft;
+}
+initForms();
+</script>
+</body>
+</html>
