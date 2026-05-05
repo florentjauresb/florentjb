@@ -1,6 +1,6 @@
 #  Portfolio — Bolou Florent Jaurès
 
-Site portfolio personnel de **Bolou Florent Jaurès** (MJ), étudiant en Finance Digitale à EMSP Abidjan.
+Site portfolio personnel de **Bolou Florent Jaurès** , étudiant en Finance Digitale à EMSP Abidjan.
 
 ##  Voir en ligne
  **[florentjauresb.github.io/florentejb](https://florentjauresb.github.io/florentejb)**
@@ -13,4 +13,4 @@ Site portfolio personnel de **Bolou Florent Jaurès** (MJ), étudiant en Finance
 HTML5 • TailwindCSS • JavaScript • Dark Mode
 
 ---
-*Fait avec par MJ — Abidjan, Côte dIvoire*
+*Fait avec par Jaures Bolou — Abidjan, Côte dIvoire*
