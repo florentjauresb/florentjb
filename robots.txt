@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://florentjauresb.github.io/florentejb/sitemap.xml
+Sitemap: https://florentjauresb.github.io/florentjb/sitemap.xml
