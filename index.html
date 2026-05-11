@@ -4,219 +4,166 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Bolou Florent Jaurès — Finance Digitale & FinTech</title>
-<meta name="description" content="Portfolio de Bolou Florent Jaurès, étudiant en Finance Digitale, Data Analyst & Vibe Coder à Abidjan."/>
+<meta name="description" content="Portfolio de Bolou Florent Jaurès — Étudiant en Finance Digitale à l'EMSP Abidjan, Vainqueur JA Social Equity 2026. Spécialisé en FinTech, analyse financière, Python, SQL et systèmes de paiement mobile en Côte d'Ivoire."/>
+<meta name="keywords" content="Bolou Florent Jaurès, Finance Digitale, FinTech Abidjan, EMSP Abidjan, Sanli Shop, Sanli Flow, développeur finance, Côte d'Ivoire, stage finance, JA Social Equity, BRVM, Mobile Money, data analyst Abidjan"/>
+<meta name="author" content="Bolou Florent Jaurès"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://florentjauresb.github.io/florentejb/"/>
+<!-- Open Graph -->
+<meta property="og:title" content="Bolou Florent Jaurès — Finance Digitale & FinTech"/>
+<meta property="og:description" content="Étudiant en Finance Digitale à l'EMSP Abidjan. Vainqueur JA Social Equity 2026. Projets : Sanli Shop, Sanli Flow."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://florentjauresb.github.io/florentejb/"/>
+<meta property="og:image" content="https://media.base44.com/images/public/69e526e09a2bb27bdd7bc3a6/70906449d_IMG_3588.jpeg"/>
+<meta property="og:locale" content="fr_FR"/>
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Bolou Florent Jaurès — Finance Digitale & FinTech"/>
+<meta name="twitter:description" content="Étudiant en Finance Digitale à l'EMSP Abidjan. Vainqueur JA Social Equity 2026."/>
+<meta name="twitter:image" content="https://media.base44.com/images/public/69e526e09a2bb27bdd7bc3a6/70906449d_IMG_3588.jpeg"/>
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Bolou Florent Jaurès",
+  "alternateName": "FJB",
+  "jobTitle": "Étudiant en Finance Digitale",
+  "url": "https://florentjauresb.github.io/florentejb/",
+  "email": "florentjauresb@gmail.com",
+  "telephone": "+22507885800 77",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Abidjan-Cocody",
+    "addressCountry": "CI"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "École Multinationale Supérieure des Postes d'Abidjan (EMSP)"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/florent-jaurès-bolou-356b9536b",
+    "https://github.com/florentjauresb"
+  ],
+  "knowsAbout": ["Finance Digitale", "FinTech", "Mobile Money", "Python", "SQL", "BRVM", "Inclusion Financière"]
+}
+</script>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
 <style>
   *{font-family:'Inter',sans-serif;scroll-behavior:smooth;box-sizing:border-box}
-  body{margin:0;background:#050a14;color:white;overflow-x:hidden}
-  .grid-bg{background-image:linear-gradient(rgba(0,200,255,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,200,255,0.025) 1px,transparent 1px);background-size:50px 50px}
+  body{margin:0;background:#050a14;color:white}
+  .grid-bg{background-image:linear-gradient(rgba(0,200,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,200,255,0.03) 1px,transparent 1px);background-size:50px 50px}
   .gradient-text{background:linear-gradient(135deg,#22d3ee,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
   #typed::after{content:'|';animation:blink .7s infinite;color:#22d3ee}
   @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-  .skill-bar{width:0%;transition:width 1.4s cubic-bezier(.4,0,.2,1)}
+  .skill-bar{width:0%;transition:width 1.2s ease-out}
   .skill-bar.go{width:var(--w)}
-  .card{transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
-  .card:hover{transform:translateY(-6px);box-shadow:0 24px 48px rgba(34,211,238,.1);border-color:rgba(34,211,238,.35)!important}
+  .card{transition:transform .3s,box-shadow .3s,border-color .3s}
+  .card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(34,211,238,.12);border-color:rgba(34,211,238,.5)!important}
+  .cert-icon{transition:transform .3s}
+  .cert-card:hover .cert-icon{transform:scale(1.12) rotate(-5deg)}
   .tag{display:inline-block;padding:3px 11px;border-radius:99px;background:#1f2937;border:1px solid #374151;font-size:11px;color:#9ca3af}
-  .photo-glow{box-shadow:0 0 50px rgba(34,211,238,.2),0 0 100px rgba(34,211,238,.06)}
+  .photo-glow{box-shadow:0 0 40px rgba(34,211,238,.25),0 0 80px rgba(34,211,238,.08)}
   #mobile-menu{display:none}
   #mobile-menu.open{display:flex}
-  ::-webkit-scrollbar{width:4px}
+  ::-webkit-scrollbar{width:5px}
   ::-webkit-scrollbar-track{background:#050a14}
   ::-webkit-scrollbar-thumb{background:#1e3a4a;border-radius:3px}
-  .contact-icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:10px;flex-shrink:0}
-
-  /* === REVEAL ON SCROLL === */
-  .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
-  .reveal.visible{opacity:1;transform:translateY(0)}
-  .reveal-left{opacity:0;transform:translateX(-30px);transition:opacity .7s ease,transform .7s ease}
-  .reveal-left.visible{opacity:1;transform:translateX(0)}
-  .reveal-right{opacity:0;transform:translateX(30px);transition:opacity .7s ease,transform .7s ease}
-  .reveal-right.visible{opacity:1;transform:translateX(0)}
-  .reveal-delay-1{transition-delay:.1s}
-  .reveal-delay-2{transition-delay:.2s}
-  .reveal-delay-3{transition-delay:.3s}
-  .reveal-delay-4{transition-delay:.4s}
-
-  /* === PHOTO HOVER === */
-  .photo-wrap{position:relative;display:inline-block}
-  .photo-wrap img{transition:transform .5s ease}
-  .photo-wrap:hover img{transform:scale(1.03)}
-
-  /* === PARTICULES HERO === */
-  .particle{position:absolute;border-radius:50%;pointer-events:none;animation:float linear infinite}
-  @keyframes float{0%{transform:translateY(0) translateX(0);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-100vh) translateX(20px);opacity:0}}
-
-  /* === NAV LINK UNDERLINE === */
-  .nav-link{position:relative}
-  .nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1.5px;background:#22d3ee;transition:width .3s ease}
-  .nav-link:hover::after{width:100%}
-
-  /* === PULSE BADGE === */
-  @keyframes pulse-border{0%,100%{box-shadow:0 0 0 0 rgba(34,211,238,.3)}50%{box-shadow:0 0 0 6px rgba(34,211,238,0)}}
-  .pulse-badge{animation:pulse-border 2.5s ease infinite}
-
-  /* === STAT CARDS === */
-  .stat-card{background:rgba(255,255,255,.02);border:1px solid rgba(34,211,238,.08);border-radius:16px;padding:20px;transition:border-color .3s,background .3s}
-  .stat-card:hover{background:rgba(34,211,238,.04);border-color:rgba(34,211,238,.2)}
-
-  /* === TIMELINE DOT === */
-  .tl-dot{width:16px;height:16px;border-radius:50%;flex-shrink:0;margin-top:4px;box-shadow:0 0 0 3px rgba(34,211,238,.15)}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav class="fixed top-0 left-0 right-0 z-50 bg-[#050a14]/90 backdrop-blur-lg border-b border-white/5">
+<nav class="fixed top-0 left-0 right-0 z-50 bg-[#050a14]/95 backdrop-blur-md border-b border-cyan-900/30">
   <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
     <span class="text-xl font-black tracking-widest text-cyan-400">FJB.</span>
-    <div class="hidden md:flex gap-7 text-sm font-medium">
-      <a href="#hero"     class="nav-link text-gray-400 hover:text-white transition-colors">Accueil</a>
-      <a href="#about"    class="nav-link text-gray-400 hover:text-white transition-colors">Profil</a>
-      <a href="#skills"   class="nav-link text-gray-400 hover:text-white transition-colors">Compétences</a>
-      <a href="#projects" class="nav-link text-gray-400 hover:text-white transition-colors">Projets</a>
-      <a href="#timeline" class="nav-link text-gray-400 hover:text-white transition-colors">Parcours</a>
-      <a href="#contact"  class="nav-link text-gray-400 hover:text-white transition-colors">Contact</a>
+    <div class="hidden md:flex gap-6 text-sm font-semibold">
+      <a href="#hero" class="text-gray-400 hover:text-cyan-400 transition-colors">Accueil</a>
+      <a href="#about" class="text-gray-400 hover:text-cyan-400 transition-colors">Profil</a>
+      <a href="#skills" class="text-gray-400 hover:text-cyan-400 transition-colors">Compétences</a>
+      <a href="#projects" class="text-gray-400 hover:text-cyan-400 transition-colors">Projets</a>
+      <a href="#certifications" class="text-gray-400 hover:text-cyan-400 transition-colors">Certifications</a>
+      <a href="#timeline" class="text-gray-400 hover:text-cyan-400 transition-colors">Parcours</a>
+      <a href="#contact" class="text-gray-400 hover:text-cyan-400 transition-colors">Contact</a>
     </div>
-    <a id="nav-cv" href="CV_Bolou_Florent_Jaures.pdf" download
-       class="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full text-sm font-bold text-white hover:opacity-90 hover:scale-105 transition-all shadow-lg shadow-cyan-500/20">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a1 1 0 001 1h16a1 1 0 001-1v-3"/>
-      </svg>
-      Mon CV
-    </a>
-    <button onclick="document.getElementById('mobile-menu').classList.toggle('open')" class="md:hidden text-gray-400 hover:text-white text-2xl transition-colors">☰</button>
+    <a id="nav-cv" href="CV_Bolou_Florent_Jaures.pdf" download class="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full text-sm font-bold text-white hover:scale-105 transition-transform shadow-lg">⬇️ Mon CV</a>
+    <button onclick="document.getElementById('mobile-menu').classList.toggle('open')" class="md:hidden text-cyan-400 text-2xl">☰</button>
   </div>
-  <div id="mobile-menu" class="flex-col bg-[#080d1a] border-t border-white/5 px-6 py-4 gap-4 text-sm">
-    <a href="#hero"     onclick="document.getElementById('mobile-menu').classList.remove('open')" class="text-gray-300 hover:text-cyan-400">Accueil</a>
-    <a href="#about"    onclick="document.getElementById('mobile-menu').classList.remove('open')" class="text-gray-300 hover:text-cyan-400">Profil</a>
-    <a href="#skills"   onclick="document.getElementById('mobile-menu').classList.remove('open')" class="text-gray-300 hover:text-cyan-400">Compétences</a>
+  <div id="mobile-menu" class="flex-col bg-[#0a1020] border-t border-cyan-900/30 px-6 py-4 gap-4 text-sm">
+    <a href="#hero" onclick="document.getElementById('mobile-menu').classList.remove('open')" class="text-gray-300 hover:text-cyan-400">Accueil</a>
+    <a href="#about" onclick="document.getElementById('mobile-menu').classList.remove('open')" class="text-gray-300 hover:text-cyan-400">Profil</a>
+    <a href="#skills" onclick="document.getElementById('mobile-menu').classList.remove('open')" class="text-gray-300 hover:text-cyan-400">Compétences</a>
     <a href="#projects" onclick="document.getElementById('mobile-menu').classList.remove('open')" class="text-gray-300 hover:text-cyan-400">Projets</a>
+    <a href="#certifications" onclick="document.getElementById('mobile-menu').classList.remove('open')" class="text-gray-300 hover:text-cyan-400">Certifications</a>
     <a href="#timeline" onclick="document.getElementById('mobile-menu').classList.remove('open')" class="text-gray-300 hover:text-cyan-400">Parcours</a>
-    <a href="#contact"  onclick="document.getElementById('mobile-menu').classList.remove('open')" class="text-gray-300 hover:text-cyan-400">Contact</a>
-    <a id="mobile-cv" href="CV_Bolou_Florent_Jaures.pdf" download
-       class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full text-sm font-bold text-white w-fit">Télécharger CV</a>
+    <a href="#contact" onclick="document.getElementById('mobile-menu').classList.remove('open')" class="text-gray-300 hover:text-cyan-400">Contact</a>
+    <a id="mobile-cv" href="CV_Bolou_Florent_Jaures.pdf" download class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full text-sm font-bold text-white w-fit">⬇️ Mon CV</a>
   </div>
 </nav>
 
-<!-- PARTICULES HERO -->
-<div id="particles" class="fixed inset-0 pointer-events-none z-0"></div>
-
 <!-- HERO -->
 <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 grid-bg">
-  <div class="absolute inset-0 pointer-events-none">
-    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/6 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-600/6 rounded-full blur-3xl"></div>
-  </div>
+  <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
   <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
-    <div id="hero-badge"
-         class="pulse-badge inline-block mb-6 px-5 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-sm font-semibold tracking-wide reveal">
-      Vainqueur JA Social Equity 2026
-    </div>
-    <h1 class="text-6xl md:text-8xl font-black mb-4 tracking-tight leading-none reveal reveal-delay-1">
+    <div id="hero-badge" class="inline-block mb-6 px-5 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 text-sm font-bold tracking-widest uppercase">🏆 Vainqueur JA Social Equity 2026</div>
+    <h1 class="text-6xl md:text-8xl font-black mb-4 tracking-tight leading-none">
       <span id="hero-ln" class="text-white">BOLOU</span><br/>
       <span id="hero-fn" class="gradient-text">FLORENT JAURÈS</span>
     </h1>
-    <div class="text-2xl md:text-3xl font-light text-gray-300 mb-8 h-12 flex items-center justify-center reveal reveal-delay-2">
-      <span id="typed" class="text-cyan-400 font-semibold"></span>
+    <div class="text-2xl md:text-3xl font-light text-gray-300 mb-8 h-12 flex items-center justify-center">
+      <span id="typed" class="text-cyan-400 font-bold"></span>
     </div>
-    <p id="hero-bio" class="text-gray-400 text-lg max-w-2xl mx-auto mb-10 leading-relaxed reveal reveal-delay-3">
-      Étudiant en Finance Digitale à l'EMSP Abidjan. Je conçois des outils agiles qui modernisent les services financiers — de l'idée au produit déployé.
-    </p>
-    <div class="flex flex-wrap gap-4 justify-center reveal reveal-delay-4">
-      <a href="#projects"
-         class="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-bold text-white hover:opacity-90 hover:scale-105 transition-all shadow-lg shadow-cyan-500/20">
-        Voir mes projets
-      </a>
-      <a id="hero-cv" href="CV_Bolou_Florent_Jaures.pdf" download
-         class="px-8 py-3 border border-cyan-500/40 rounded-full font-bold text-cyan-400 hover:bg-cyan-500/10 transition-colors flex items-center gap-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a1 1 0 001 1h16a1 1 0 001-1v-3"/>
-        </svg>
-        Télécharger mon CV
-      </a>
+    <p id="hero-bio" class="text-gray-400 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">Étudiant en Finance Digitale à l'EMSP Abidjan. Je conçois des outils agiles qui modernisent les services financiers — de l'idée au produit déployé.</p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="#projects" class="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-bold text-white hover:scale-105 transition-transform shadow-lg shadow-cyan-500/20">Voir mes projets →</a>
+      <a id="hero-cv" href="CV_Bolou_Florent_Jaures.pdf" download class="px-8 py-3 border border-cyan-500/50 rounded-full font-bold text-cyan-400 hover:bg-cyan-500/10 transition-colors flex items-center gap-2">⬇️ Télécharger mon CV</a>
     </div>
-    <!-- Stats -->
-    <div class="mt-16 grid grid-cols-3 gap-4 max-w-lg mx-auto reveal">
-      <div class="stat-card text-center">
+    <!-- Stats héro — labels dynamiques -->
+    <div class="mt-16 grid grid-cols-3 gap-6 max-w-lg mx-auto">
+      <div class="text-center">
         <div id="c1" class="text-3xl font-black text-cyan-400">0</div>
         <div id="c1-lbl" class="text-xs text-gray-500 mt-1">Projets déployés</div>
       </div>
-      <div class="stat-card text-center">
+      <div class="text-center">
         <div id="c2" class="text-3xl font-black text-cyan-400">0</div>
-        <div id="c2-lbl" class="text-xs text-gray-500 mt-1">Ans en Finance Digitale</div>
+        <div id="c2-lbl" class="text-xs text-gray-500 mt-1">En Finance Digitale</div>
       </div>
-      <div class="stat-card text-center">
+      <div class="text-center">
         <div id="c3" class="text-3xl font-black text-cyan-400">0</div>
         <div id="c3-lbl" class="text-xs text-gray-500 mt-1">Compétences clés</div>
       </div>
     </div>
   </div>
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-600 text-xs">
-    <span class="tracking-widest uppercase text-xs">Scroll</span>
-    <div class="w-px h-10 bg-gradient-to-b from-cyan-400 to-transparent animate-pulse"></div>
+    <span>Scroll</span>
+    <div class="w-0.5 h-8 bg-gradient-to-b from-cyan-400 to-transparent animate-pulse"></div>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="py-28 px-6">
+<section id="about" class="py-24 px-6">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-4xl font-black mb-16 text-center reveal">Profil <span class="text-cyan-400">Professionnel</span></h2>
-    <div class="grid md:grid-cols-5 gap-12 items-center">
-
-      <!-- Photo — 2 cols -->
-      <div class="md:col-span-2 flex justify-center reveal-left">
-        <div class="photo-wrap">
-          <div class="w-64 h-76 rounded-3xl overflow-hidden photo-glow ring-1 ring-cyan-500/20" style="height:300px">
-            <img id="profile-photo"
-                 src="https://media.base44.com/images/public/69e526e09a2bb27bdd7bc3a6/70906449d_IMG_3588.jpeg"
-                 alt="Bolou Florent Jaurès"
-                 class="w-full h-full object-cover object-top"/>
+    <h2 class="text-4xl font-black mb-16 text-center">Profil <span class="text-cyan-400">Professionnel</span></h2>
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="flex justify-center md:justify-start">
+        <div class="relative">
+          <div class="w-56 h-64 rounded-2xl overflow-hidden photo-glow ring-4 ring-cyan-500/20">
+            <img id="profile-photo" src="https://media.base44.com/images/public/69e526e09a2bb27bdd7bc3a6/70906449d_IMG_3588.jpeg"
+                 alt="Bolou Florent Jaurès" class="w-full h-full object-cover object-top"/>
           </div>
-          <!-- Ligne déco sous la photo -->
-          <div class="mt-4 flex items-center gap-3">
-            <div class="flex-1 h-px bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent"></div>
-            <span class="text-xs text-gray-500 tracking-widest uppercase">Abidjan, Côte d'Ivoire</span>
-            <div class="flex-1 h-px bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent"></div>
-          </div>
+          <div class="absolute -bottom-3 -right-3 w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-xl shadow-lg">🇨🇮</div>
         </div>
       </div>
-
-      <!-- Texte — 3 cols -->
-      <div class="md:col-span-3 reveal-right">
-        <p id="about-bio" class="text-gray-300 text-lg leading-relaxed mb-8">
-          Passionné par l'intersection entre la <span class="text-cyan-400 font-semibold">finance</span> et la <span class="text-cyan-400 font-semibold">technologie</span>, je construis des solutions qui ont un impact réel. Mon approche combine rigueur analytique et agilité digitale.
-        </p>
-
-        <!-- Tags compétences — style sobre -->
-        <div class="flex flex-wrap gap-2 mb-8">
-          <span class="px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold">Finance Digitale</span>
-          <span class="px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold">Python & SQL</span>
-          <span class="px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold">Data & BI</span>
-          <span class="px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold">Vibe Coding</span>
-          <span class="px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold">Innovation</span>
-          <span class="px-3 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold">Mandarin (début)</span>
-        </div>
-
-        <!-- Infos clés -->
-        <div class="space-y-3">
-          <div class="flex items-center gap-3 text-sm text-gray-400">
-            <div class="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0"></div>
-            EMSP Abidjan — Licence 3 Finance Digitale
-          </div>
-          <div class="flex items-center gap-3 text-sm text-gray-400">
-            <div class="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0"></div>
-            Spécialisation : Systèmes de paiement électronique & banque digitale
-          </div>
-          <div class="flex items-center gap-3 text-sm text-gray-400">
-            <div class="w-1.5 h-1.5 rounded-full bg-cyan-400 flex-shrink-0"></div>
-            Langues : Français (natif) · Anglais (intermédiaire) · Mandarin (débutant)
-          </div>
-          <div class="flex items-center gap-3 text-sm text-gray-400">
-            <div class="w-1.5 h-1.5 rounded-full bg-yellow-400 flex-shrink-0"></div>
-            Vainqueur JA Social Equity 2026 — concours d'innovation entrepreneuriale
-          </div>
+      <div>
+        <p id="about-bio" class="text-gray-300 text-lg leading-relaxed mb-6">Passionné par l'intersection entre la <span class="text-cyan-400 font-semibold">finance et la technologie</span>, je construis des solutions qui ont un impact réel. Mon approche combine rigueur analytique et agilité digitale.</p>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-cyan-500/30 transition-colors"><span class="text-xl">🎯</span><span class="text-sm text-gray-300">Finance Digitale</span></div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-cyan-500/30 transition-colors"><span class="text-xl">🐍</span><span class="text-sm text-gray-300">Python & SQL</span></div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-cyan-500/30 transition-colors"><span class="text-xl">📊</span><span class="text-sm text-gray-300">Data & BI</span></div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-cyan-500/30 transition-colors"><span class="text-xl">🏆</span><span class="text-sm text-gray-300">Innovateur</span></div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-cyan-500/30 transition-colors"><span class="text-xl">🌍</span><span class="text-sm text-gray-300">Abidjan, CI</span></div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-gray-900/50 border border-gray-800 hover:border-cyan-500/30 transition-colors"><span class="text-xl">🇨🇳</span><span class="text-sm text-gray-300">Mandarin (début)</span></div>
         </div>
       </div>
     </div>
@@ -226,18 +173,22 @@
 <!-- SKILLS -->
 <section id="skills" class="py-24 px-6 bg-[#080d1a]">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-4xl font-black mb-4 text-center reveal">Mes <span class="text-cyan-400">Compétences</span></h2>
-    <p class="text-gray-500 text-center mb-10 reveal">Compétences techniques et domaines d'expertise</p>
-    <div class="flex gap-3 justify-center flex-wrap mb-12 reveal">
+    <h2 class="text-4xl font-black mb-4 text-center">Mes <span class="text-cyan-400">Compétences</span></h2>
+    <p class="text-gray-500 text-center mb-10">Compétences techniques et domaines d'expertise</p>
+    <div class="flex gap-3 justify-center flex-wrap mb-12">
       <button onclick="filterSkills('Tous',this)" class="fbtn active px-5 py-2 rounded-full text-sm font-semibold bg-cyan-500 text-white">Tous</button>
-      <button onclick="filterSkills('Dev',this)"     class="fbtn px-5 py-2 rounded-full text-sm font-semibold border border-gray-700 text-gray-400 hover:border-cyan-500">Dev</button>
-      <button onclick="filterSkills('Data',this)"    class="fbtn px-5 py-2 rounded-full text-sm font-semibold border border-gray-700 text-gray-400 hover:border-cyan-500">Data</button>
+      <button onclick="filterSkills('Dev',this)" class="fbtn px-5 py-2 rounded-full text-sm font-semibold border border-gray-700 text-gray-400 hover:border-cyan-500">Dev</button>
+      <button onclick="filterSkills('Data',this)" class="fbtn px-5 py-2 rounded-full text-sm font-semibold border border-gray-700 text-gray-400 hover:border-cyan-500">Data</button>
       <button onclick="filterSkills('Finance',this)" class="fbtn px-5 py-2 rounded-full text-sm font-semibold border border-gray-700 text-gray-400 hover:border-cyan-500">Finance</button>
     </div>
-    <div class="grid md:grid-cols-2 gap-6 reveal" id="skills-grid"></div>
-    <div class="mt-16 reveal">
-      <h3 class="text-lg font-bold text-center mb-8 text-gray-400 uppercase tracking-wider text-sm">Soft Skills & Langues</h3>
-      <div class="flex flex-wrap gap-3 justify-center" id="soft-skills-grid"></div>
+    <div class="grid md:grid-cols-2 gap-6" id="skills-grid">
+      <!-- Injecté dynamiquement par JS -->
+    </div>
+    <div class="mt-16">
+      <h3 class="text-xl font-bold text-center mb-8 text-gray-300">Soft Skills & Langues</h3>
+      <div class="flex flex-wrap gap-3 justify-center" id="soft-skills-grid">
+        <!-- Injecté dynamiquement -->
+      </div>
     </div>
   </div>
 </section>
@@ -245,279 +196,297 @@
 <!-- PROJECTS -->
 <section id="projects" class="py-24 px-6">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-4xl font-black mb-4 text-center reveal">Projets & <span class="text-cyan-400">Expériences</span></h2>
-    <p class="text-gray-500 text-center mb-16 reveal">Des solutions concrètes qui créent de la valeur</p>
+    <h2 class="text-4xl font-black mb-4 text-center">Projets & <span class="text-cyan-400">Expériences</span></h2>
+    <p class="text-gray-500 text-center mb-16">Des solutions concrètes qui créent de la valeur</p>
     <div class="grid md:grid-cols-3 gap-8" id="projects-grid"></div>
   </div>
 </section>
 
+<!-- CERTIFICATIONS -->
+<section id="certifications" class="py-24 px-6 bg-[#080d1a]">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-black mb-4 text-center">Mes <span class="text-cyan-400">Certifications</span></h2>
+    <p class="text-gray-500 text-center mb-16">Formations et reconnaissances officielles</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="certs-grid"></div>
+  </div>
+</section>
+
 <!-- TIMELINE -->
-<section id="timeline" class="py-24 px-6 bg-[#080d1a]">
-  <div class="max-w-3xl mx-auto">
-    <h2 class="text-4xl font-black mb-4 text-center reveal">Mon <span class="text-cyan-400">Parcours</span></h2>
-    <p class="text-gray-500 text-center mb-16 reveal">De l'école à l'innovation</p>
-    <div class="space-y-6" id="timeline-grid"></div>
+<section id="timeline" class="py-24 px-6">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-4xl font-black mb-4 text-center">Mon <span class="text-cyan-400">Parcours</span></h2>
+    <p class="text-gray-500 text-center mb-16">De l'école à l'innovation</p>
+    <div class="relative" id="timeline-grid">
+      <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-400 to-purple-600"></div>
+    </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section id="contact" class="py-24 px-6">
+<section id="contact" class="py-24 px-6 bg-[#080d1a]">
   <div class="max-w-3xl mx-auto text-center">
-    <h2 class="text-4xl font-black mb-4 reveal">Travaillons <span class="text-cyan-400">Ensemble</span></h2>
-    <p class="text-gray-400 text-lg mb-12 reveal">Ouvert aux opportunités, collaborations et projets innovants</p>
-    <div class="grid md:grid-cols-3 gap-5 mb-10 reveal">
-      <a id="contact-email" href="mailto:florentjauresb@gmail.com"
-         class="card block p-6 rounded-2xl bg-gray-900/50 border border-gray-800 group text-left">
-        <div class="contact-icon bg-red-500/10 mb-4">
-          <svg class="w-5 h-5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
-          </svg>
-        </div>
-        <div class="text-xs text-gray-500 mb-1 uppercase tracking-wider font-semibold">Email</div>
-        <div id="contact-email-txt" class="text-sm text-gray-300 group-hover:text-cyan-400 transition-colors break-all">florentjauresb@gmail.com</div>
+    <h2 class="text-4xl font-black mb-4">Travaillons <span class="text-cyan-400">Ensemble</span></h2>
+    <p class="text-gray-400 text-lg mb-12">Ouvert aux opportunités, collaborations et projets innovants</p>
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+      <a id="contact-email" href="mailto:florentjauresb@gmail.com" class="card block p-6 rounded-2xl bg-gray-900/50 border border-gray-800 group">
+        <div class="text-3xl mb-3">📧</div>
+        <div class="text-xs text-gray-500 mb-1 uppercase tracking-wider">Email</div>
+        <div id="contact-email-txt" class="text-sm text-gray-300 group-hover:text-cyan-400 transition-colors">florentjauresb@gmail.com</div>
       </a>
-      <a id="contact-phone" href="tel:+22507885800 77"
-         class="card block p-6 rounded-2xl bg-gray-900/50 border border-gray-800 group text-left">
-        <div class="contact-icon bg-green-500/10 mb-4">
-          <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
-          </svg>
-        </div>
-        <div class="text-xs text-gray-500 mb-1 uppercase tracking-wider font-semibold">Téléphone</div>
-        <div id="contact-phone-txt" class="text-sm text-gray-300 group-hover:text-cyan-400 transition-colors">+225 07 88 58 00 77</div>
+      <a id="contact-phone" href="tel:+2250888580077" class="card block p-6 rounded-2xl bg-gray-900/50 border border-gray-800 group">
+        <div class="text-3xl mb-3">📱</div>
+        <div class="text-xs text-gray-500 mb-1 uppercase tracking-wider">Téléphone</div>
+        <div id="contact-phone-txt" class="text-sm text-gray-300 group-hover:text-cyan-400 transition-colors">+225 08 88 58 00 77</div>
       </a>
-      <a id="contact-li" href="https://linkedin.com/in/florent-jaurès-bolou-356b9536b" target="_blank"
-         class="card block p-6 rounded-2xl bg-gray-900/50 border border-gray-800 group text-left">
-        <div class="contact-icon bg-blue-500/10 mb-4">
-          <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-          </svg>
-        </div>
-        <div class="text-xs text-gray-500 mb-1 uppercase tracking-wider font-semibold">LinkedIn</div>
+      <a id="contact-li" href="https://linkedin.com/in/florent-jaurès-bolou-356b9536b" target="_blank" class="card block p-6 rounded-2xl bg-gray-900/50 border border-gray-800 group">
+        <div class="text-3xl mb-3">💼</div>
+        <div class="text-xs text-gray-500 mb-1 uppercase tracking-wider">LinkedIn</div>
         <div class="text-sm text-gray-300 group-hover:text-cyan-400 transition-colors">Florent Jaurès Bolou</div>
       </a>
     </div>
-    <a id="contact-cv" href="CV_Bolou_Florent_Jaures.pdf" download
-       class="inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-black text-white text-lg hover:opacity-90 hover:scale-105 transition-all shadow-xl shadow-cyan-500/20 reveal">
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a1 1 0 001 1h16a1 1 0 001-1v-3"/>
-      </svg>
-      Télécharger mon CV (PDF)
-    </a>
-    <div class="mt-6 reveal">
-      <span id="contact-city" class="inline-block px-6 py-3 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm">
-        Abidjan-Cocody, Côte d'Ivoire
-      </span>
+    <a id="contact-cv" href="CV_Bolou_Florent_Jaures.pdf" download class="inline-flex items-center gap-3 px-10 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-black text-white text-lg hover:scale-105 transition-transform shadow-xl shadow-cyan-500/30">⬇️ Télécharger mon CV (PDF)</a>
+    <div class="mt-6">
+      <span id="contact-city" class="inline-block px-6 py-3 rounded-full bg-gradient-to-r from-cyan-500/20 to-blue-600/20 border border-cyan-500/30 text-cyan-400 text-sm">📍 Abidjan-Cocody, Côte d'Ivoire 🇨🇮</span>
     </div>
   </div>
 </section>
 
-<footer class="border-t border-white/5 py-8 px-6 text-center text-gray-600 text-sm">
+<footer class="border-t border-gray-900 py-8 px-6 text-center text-gray-600 text-sm">
   <div class="mb-2 text-cyan-400 font-black text-lg tracking-widest">FJB.</div>
-  <p>© 2026 Bolou Florent Jaurès — Finance Digitale & FinTech</p>
-  <p class="mt-1 text-xs text-gray-700">Abidjan, Côte d'Ivoire</p>
+  <p>© 2026 Bolou Florent Jaurès — Finance Digitale & FinTech Innovation</p>
+  <p class="mt-1 text-xs">Conçu avec passion · Abidjan, Côte d'Ivoire 🇨🇮</p>
 </footer>
 
 <script>
-/* ── DATA ── */
+/* ══════════════════════════════════════════
+   DONNÉES PAR DÉFAUT
+══════════════════════════════════════════ */
 const DEFAULTS = {
   profil:{
     fn:"FLORENT JAURÈS", ln:"BOLOU",
-    badge:"Vainqueur JA Social Equity 2026",
+    badge:"🏆 Vainqueur JA Social Equity 2026",
     titles:"Finance Digitale|Data Analyst|Vibe Coder|FinTech Builder",
     bio:"Étudiant en Finance Digitale à l'EMSP Abidjan. Je conçois des outils agiles qui modernisent les services financiers — de l'idée au produit déployé.",
     photo:"https://media.base44.com/images/public/69e526e09a2bb27bdd7bc3a6/70906449d_IMG_3588.jpeg",
     cv:"CV_Bolou_Florent_Jaures.pdf",
     stats:[
-      {v:3, s:"+",   l:"Projets déployés"},
-      {v:2, s:" ans", l:"Finance Digitale"},
-      {v:8, s:"+",   l:"Compétences clés"}
+      {v:3, s:"+",  l:"Projets déployés"},
+      {v:2, s:" ans",l:"En Finance Digitale"},
+      {v:8, s:"+",  l:"Compétences clés"}
     ]
   },
   contact:{
     email:"florentjauresb@gmail.com",
-    phone:"+225 07 88 58 00 77",
+    phone:"+225 08 88 58 00 77",
     li:"https://linkedin.com/in/florent-jaurès-bolou-356b9536b",
-    city:"Abidjan-Cocody, Côte d'Ivoire"
+    city:"Abidjan-Cocody, Côte d'Ivoire 🇨🇮"
   },
   skills:[
     {id:1,name:"Python",level:75,cat:"Dev"},
     {id:2,name:"SQL / Supabase",level:85,cat:"Dev"},
     {id:3,name:"Power BI",level:70,cat:"Data"},
-    {id:4,name:"Excel & Tableaux croisés",level:75,cat:"Data"},
-    {id:5,name:"Vibe Coding (Lovable / Base44)",level:90,cat:"Dev"},
-    {id:6,name:"Analyse financière",level:80,cat:"Finance"},
-    {id:7,name:"Gestion des risques",level:70,cat:"Finance"},
-    {id:8,name:"SYSCOHADA / Fiscalité",level:65,cat:"Finance"}
+    {id:4,name:"Excel & TCD",level:75,cat:"Data"},
+    {id:5,name:"Vibe Coding (Lovable/Base44)",level:90,cat:"Dev"},
+    {id:6,name:"Analyse Financière",level:88,cat:"Finance"},
+    {id:7,name:"SYSCOHADA / Fiscalité",level:80,cat:"Finance"},
+    {id:8,name:"Gestion des Risques",level:78,cat:"Finance"}
   ],
-  soft:"Innovation · Adaptabilité · Gestion du temps · Travail en équipe · Français natif · Anglais intermédiaire · Mandarin débutant",
+  soft:"Innovation 🚀, Agilité ⚡, Adaptabilité 🔄, Gestion du temps ⏱️, Français 🇫🇷, Anglais 🇬🇧, Mandarin 🇨🇳, Bénévolat ❤️",
   projects:[
-    {
-      title:"Sanli Flow",
-      subtitle:"Dashboard financier intelligent",
-      desc:"Tableau de bord de pilotage pour Sanli Shop — KPIs en temps réel, recommandations IA, synchronisation automatique des données.",
-      tags:"Base44,React,SQL,IA",
-      grad:"from-cyan-500 to-blue-600",
-      accent:"text-cyan-400",
-      bar:"bg-cyan-500",
-      link:""
-    },
-    {
-      title:"Sanli Shop",
-      subtitle:"Marketplace artisanat ivoirien",
-      desc:"Marketplace connectant artisans, consommateurs et livreurs locaux. Commandes temps réel, OTP de livraison, KYC intégré.",
-      tags:"Base44,React,Supabase,JavaScript",
-      grad:"from-purple-500 to-pink-600",
-      accent:"text-purple-400",
-      bar:"bg-purple-500",
-      link:""
-    },
-    {
-      title:"Stage Comptable",
-      subtitle:"Abidjan · Mars – Juin 2024",
-      desc:"Saisie des écritures comptables, préparation des états financiers, optimisation des clôtures. Maîtrise des logiciels de gestion.",
-      tags:"SYSCOHADA,Comptabilité,Fiscalité",
-      grad:"from-emerald-500 to-teal-600",
-      accent:"text-emerald-400",
-      bar:"bg-emerald-500",
-      link:""
-    }
+    {id:1,icon:"📊",grad:"from-cyan-500 to-blue-600",accent:"text-cyan-400",title:"SanliFlows",subtitle:"Dashboard Financier",desc:"Architecture d'un dashboard financier intelligent avec Supabase et requêtes SQL avancées. Visualisation de KPIs en temps réel pour le pilotage de trésorerie.",tags:"Supabase, SQL, Python, Data viz",link:""},
+    {id:2,icon:"🛍️",grad:"from-purple-500 to-pink-600",accent:"text-purple-400",title:"Sanlishop",subtitle:"Marketplace E-commerce",desc:"Développement d'une marketplace dédiée à l'artisanat africain avec flux de paiement intégré. Architecture pensée pour l'inclusion financière.",tags:"No-code, Paiement digital, UX/UI",link:""},
+    {id:3,icon:"🏦",grad:"from-emerald-500 to-teal-600",accent:"text-emerald-400",title:"Stage Comptable",subtitle:"Expérience Pro — Abidjan",desc:"Saisie des écritures comptables, préparation des états financiers et optimisation des procédures de clôture.",tags:"Comptabilité, États financiers, SYSCOHADA",link:""}
+  ],
+  certs:[
+    {id:1,icon:"🏆",grad:"from-yellow-400 to-orange-500",accent:"text-yellow-400",title:"Prix JA Social Equity",org:"Junior Achievement CI",year:"2026",desc:"Vainqueur du concours d'innovation JA Social Equity 2026 — projet à fort impact social et financier.",tags:"Innovation, Social Impact",link:""},
+    {id:2,icon:"🎓",grad:"from-cyan-500 to-blue-600",accent:"text-cyan-400",title:"Licence 3 Finance Digitale",org:"EMSP Abidjan",year:"2025–2026",desc:"Spécialisation en systèmes de paiement électronique, inclusion financière et banque digitale.",tags:"Banque Digitale, Monétique",link:""},
+    {id:3,icon:"📜",grad:"from-emerald-400 to-teal-600",accent:"text-emerald-400",title:"Baccalauréat Série D",org:"Mention Bien",year:"2023",desc:"Diplôme du Baccalauréat scientifique obtenu avec la mention Bien, série D.",tags:"Sciences, Mention Bien",link:""}
   ],
   timeline:[
-    {year:"2025 – 2026",label:"Licence 3 — Finance Digitale",sub:"EMSP Abidjan · Spécialisation paiement électronique & banque digitale",color:"bg-cyan-400"},
-    {year:"2026",       label:"Vainqueur JA Social Equity",  sub:"Concours d'innovation entrepreneuriale — projet à impact social",color:"bg-yellow-400"},
-    {year:"2025 – Présent",label:"Sanli Shop & Sanli Flow",  sub:"Marketplace et dashboard BI — développement full-stack",color:"bg-purple-400"},
-    {year:"2024",       label:"Stage Comptable",              sub:"Expérience professionnelle en cabinet · Abidjan",color:"bg-emerald-400"},
-    {year:"2023 – 2025",label:"Licence 1 & 2 — Finance Digitale",sub:"EMSP Abidjan · Analyse financière, Gestion des risques, Fiscalité",color:"bg-blue-400"}
+    {id:1,year:"2023",label:"Baccalauréat Série D",sub:"Mention Bien",icon:"🎓",grad:"from-cyan-500 to-blue-700",accent:"text-cyan-400"},
+    {id:2,year:"2023–2025",label:"Licence 1 & 2 — Finance Digitale",sub:"EMSP Abidjan",icon:"📚",grad:"from-cyan-500 to-blue-700",accent:"text-cyan-400"},
+    {id:3,year:"2024",label:"Stage Comptable",sub:"Abidjan — 3 mois",icon:"💼",grad:"from-cyan-500 to-blue-700",accent:"text-cyan-400"},
+    {id:4,year:"2025",label:"SanliFlows & Sanlishop",sub:"Projets Data & E-commerce",icon:"🚀",grad:"from-cyan-500 to-blue-700",accent:"text-cyan-400"},
+    {id:5,year:"2026",label:"Vainqueur JA Social Equity",sub:"Concours d'Innovation",icon:"🏆",grad:"from-yellow-400 to-orange-500",accent:"text-yellow-400"},
+    {id:6,year:"2025–2026",label:"Licence 3 — Finance Digitale",sub:"Spécialisation Banque Digitale · EMSP",icon:"⭐",grad:"from-purple-500 to-pink-600",accent:"text-purple-400"}
   ]
 };
 
-let D = JSON.parse(JSON.stringify(DEFAULTS));
+/* ══════════════════════════════════════════
+   CHARGEMENT DEPUIS LOCALSTORAGE (clé unique fjb_data)
+══════════════════════════════════════════ */
+let D = JSON.parse(JSON.stringify(DEFAULTS)); // deep copy
 
-/* ── LOAD / MERGE LOCALSTORAGE ── */
 function load() {
   try {
     const raw = localStorage.getItem('fjb_data');
     if (raw) {
-      const s = JSON.parse(raw);
-      if (s.profil)   D.profil   = Object.assign({}, DEFAULTS.profil,  s.profil);
-      if (s.contact)  D.contact  = Object.assign({}, DEFAULTS.contact, s.contact);
-      if (s.skills  && s.skills.length)    D.skills   = s.skills;
-      if (s.soft)     D.soft     = s.soft;
-      if (s.projects && s.projects.length) D.projects = s.projects;
-      if (s.timeline && s.timeline.length) D.timeline = s.timeline;
+      const saved = JSON.parse(raw);
+      // Merge intelligemment — ne remplace que ce qui existe
+      if (saved.profil)   D.profil   = Object.assign({}, DEFAULTS.profil,  saved.profil);
+      if (saved.contact)  D.contact  = Object.assign({}, DEFAULTS.contact, saved.contact);
+      if (saved.skills  && saved.skills.length)   D.skills   = saved.skills;
+      if (saved.soft)     D.soft     = saved.soft;
+      if (saved.projects && saved.projects.length) D.projects = saved.projects;
+      if (saved.certs   && saved.certs.length)    D.certs    = saved.certs;
+      if (saved.timeline && saved.timeline.length) D.timeline = saved.timeline;
     }
-  } catch(e) {}
+  } catch(e) { console.warn('Erreur chargement localStorage:', e); }
 
+  // ── Injection DOM — Profil ──
   const p = D.profil;
-  const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
 
-  set('hero-ln', (p.ln||'BOLOU').toUpperCase());
-  set('hero-fn', (p.fn||'FLORENT JAURÈS').toUpperCase());
-  if (p.badge) set('hero-badge', p.badge);
-  if (p.bio) {
-    const h = document.getElementById('hero-bio');
-    const a = document.getElementById('about-bio');
-    if (h) h.textContent = p.bio;
-    if (a) a.innerHTML = p.bio.replace(/(finance|technologie|digitale)/gi,'<span class="text-cyan-400 font-semibold">$1</span>');
-  }
+  // Nom héro
+  const elLn = document.getElementById('hero-ln');
+  const elFn = document.getElementById('hero-fn');
+  if (elLn) elLn.textContent = p.ln ? p.ln.toUpperCase() : 'BOLOU';
+  if (elFn) elFn.textContent = p.fn ? p.fn.toUpperCase() : 'FLORENT JAURÈS';
+
+  // Badge
+  const badge = document.getElementById('hero-badge');
+  if (badge && p.badge) badge.textContent = p.badge;
+
+  // Bio héro + bio about
+  const heroBio = document.getElementById('hero-bio');
+  const aboutBio = document.getElementById('about-bio');
+  if (heroBio && p.bio) heroBio.textContent = p.bio;
+  if (aboutBio && p.bio) aboutBio.innerHTML = p.bio.replace(/(finance|technologie|digitale)/gi, '<span class="text-cyan-400 font-semibold">$1</span>');
+
+  // Photo
   const photo = document.getElementById('profile-photo');
   if (photo && p.photo) photo.src = p.photo;
 
+  // CV liens
   const cvHref = p.cv || 'CV_Bolou_Florent_Jaures.pdf';
   ['nav-cv','mobile-cv','hero-cv','contact-cv'].forEach(id => {
-    const el = document.getElementById(id); if (el) el.href = cvHref;
+    const el = document.getElementById(id);
+    if (el) el.href = cvHref;
   });
 
+  // Stats — labels dynamiques
   const stats = p.stats || DEFAULTS.profil.stats;
   ['c1-lbl','c2-lbl','c3-lbl'].forEach((id, i) => {
     const el = document.getElementById(id);
     if (el && stats[i]) el.textContent = stats[i].l;
   });
 
+  // ── Injection DOM — Contact ──
   const c = D.contact;
-  const em  = document.getElementById('contact-email');
-  const ph  = document.getElementById('contact-phone');
-  const li  = document.getElementById('contact-li');
-  const cy  = document.getElementById('contact-city');
-  const etx = document.getElementById('contact-email-txt');
-  const ptx = document.getElementById('contact-phone-txt');
-  if (em && c.email) { em.href = 'mailto:'+c.email; if (etx) etx.textContent = c.email; }
-  if (ph && c.phone) { ph.href = 'tel:'+c.phone.replace(/\s/g,''); if (ptx) ptx.textContent = c.phone; }
-  if (li && c.li)   li.href = c.li;
-  if (cy && c.city) cy.textContent = c.city;
+  const em = document.getElementById('contact-email');
+  const ph = document.getElementById('contact-phone');
+  const li = document.getElementById('contact-li');
+  const cy = document.getElementById('contact-city');
+  if (em && c.email) { em.href = 'mailto:'+c.email; document.getElementById('contact-email-txt').textContent = c.email; }
+  if (ph && c.phone) { ph.href = 'tel:'+c.phone.replace(/\s/g,''); document.getElementById('contact-phone-txt').textContent = c.phone; }
+  if (li && c.li) li.href = c.li;
+  if (cy && c.city) cy.textContent = '📍 ' + c.city;
 }
+
 load();
 
-/* ── SKILLS ── */
+/* ══════════════════════════════════════════
+   RENDER SKILLS
+══════════════════════════════════════════ */
 function renderSkills() {
   const g = document.getElementById('skills-grid');
   g.innerHTML = '';
   D.skills.forEach(s => {
     g.insertAdjacentHTML('beforeend', `
-      <div class="skill-item" data-cat="${s.cat}">
-        <div class="flex justify-between mb-2">
-          <span class="text-sm font-medium text-gray-300">${s.name}</span>
-          <span class="text-sm text-cyan-400 font-bold tabular-nums">${s.level}%</span>
+      <div class="skill-item mb-1" data-cat="${s.cat}">
+        <div class="flex justify-between mb-1">
+          <span class="text-sm font-semibold text-gray-300">${s.name}</span>
+          <span class="text-sm text-cyan-400 font-bold">${s.level}%</span>
         </div>
-        <div class="w-full bg-gray-800/80 rounded-full h-1.5 overflow-hidden">
-          <div class="skill-bar h-1.5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500" style="--w:${s.level}%"></div>
+        <div class="w-full bg-gray-800 rounded-full h-2.5 overflow-hidden">
+          <div class="skill-bar h-2.5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500" style="--w:${s.level}%"></div>
         </div>
       </div>`);
   });
+
+  // Soft skills
   const sg = document.getElementById('soft-skills-grid');
   if (sg && D.soft) {
-    sg.innerHTML = D.soft.split('·').map(t => t.trim()).filter(Boolean)
+    sg.innerHTML = D.soft.split(',').map(t => t.trim()).filter(Boolean)
       .map(t => `<span class="tag">${t}</span>`).join('');
   }
 }
 renderSkills();
 
-/* ── PROJECTS ── */
+/* ══════════════════════════════════════════
+   RENDER PROJECTS
+══════════════════════════════════════════ */
 function renderProjects() {
   const g = document.getElementById('projects-grid');
   g.innerHTML = '';
-  D.projects.forEach((p, i) => {
-    const tags = p.tags.split(',').map(t => `<span class="tag">${t.trim()}</span>`).join('');
-    const lnk = p.link ? `<a href="${p.link}" target="_blank" class="mt-3 inline-flex items-center gap-1 text-xs text-cyan-400 hover:underline font-semibold">Voir le projet →</a>` : '';
+  D.projects.forEach(p => {
+    const tags = p.tags.split(',').map(t=>`<span class="tag">${t.trim()}</span>`).join('');
+    const lnk = p.link ? `<a href="${p.link}" target="_blank" class="mt-3 inline-flex items-center gap-1 text-xs text-cyan-400 hover:underline font-semibold">🔗 Voir le projet →</a>` : '';
     g.insertAdjacentHTML('beforeend', `
-      <div class="card reveal rounded-2xl bg-gray-900/40 border border-gray-800/80 p-6 flex flex-col" style="transition-delay:${i*0.1}s">
-        <div class="w-10 h-1 rounded-full bg-gradient-to-r ${p.grad} mb-5"></div>
+      <div class="card rounded-2xl bg-gray-900/50 border border-gray-800 p-6 flex flex-col">
+        <div class="w-14 h-14 rounded-xl bg-gradient-to-br ${p.grad} flex items-center justify-center text-2xl mb-4 shadow-lg">${p.icon}</div>
         <h3 class="text-xl font-black text-white mb-1">${p.title}</h3>
-        <p class="${p.accent} text-xs font-semibold uppercase tracking-wider mb-3">${p.subtitle}</p>
+        <p class="${p.accent} text-sm font-semibold mb-3">${p.subtitle}</p>
         <p class="text-gray-400 text-sm leading-relaxed mb-4 flex-1">${p.desc}</p>
         <div class="flex flex-wrap gap-2">${tags}</div>
         ${lnk}
       </div>`);
   });
-  initReveal();
 }
 renderProjects();
 
-/* ── TIMELINE ── */
+/* ══════════════════════════════════════════
+   RENDER CERTS
+══════════════════════════════════════════ */
+function renderCerts() {
+  const g = document.getElementById('certs-grid');
+  g.innerHTML = '';
+  D.certs.forEach(c => {
+    const tags = (Array.isArray(c.tags) ? c.tags : (c.tags||'').split(',').map(t=>t.trim()).filter(Boolean))
+      .map(t => `<span class="tag">${t}</span>`).join('');
+    const lnk = c.link ? `<a href="${c.link}" target="_blank" class="inline-flex items-center gap-1 text-xs text-cyan-400 hover:underline font-semibold">⬇️ Voir le certificat →</a>` : '';
+    g.insertAdjacentHTML('beforeend', `
+      <div class="cert-card card rounded-2xl bg-gray-900/50 border border-gray-800 p-6 flex flex-col gap-4">
+        <div class="flex items-start gap-4">
+          <div class="cert-icon w-14 h-14 flex-shrink-0 rounded-xl bg-gradient-to-br ${c.grad} flex items-center justify-center text-2xl shadow-lg">${c.icon}</div>
+          <div>
+            <h3 class="font-black text-white text-base leading-tight">${c.title}</h3>
+            <p class="${c.accent} text-xs font-semibold mt-1">${c.org}</p>
+            <p class="text-gray-500 text-xs mt-0.5">${c.year}</p>
+          </div>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">${c.desc}</p>
+        ${tags ? `<div class="flex flex-wrap gap-2">${tags}</div>` : ''}
+        ${lnk}
+      </div>`);
+  });
+}
+renderCerts();
+
+/* ══════════════════════════════════════════
+   RENDER TIMELINE
+══════════════════════════════════════════ */
 function renderTimeline() {
   const g = document.getElementById('timeline-grid');
+  const line = g.querySelector('.absolute');
   g.innerHTML = '';
-  D.timeline.forEach((item, i) => {
+  if (line) g.appendChild(line);
+  D.timeline.forEach(item => {
     g.insertAdjacentHTML('beforeend', `
-      <div class="reveal flex gap-5 items-start" style="transition-delay:${i*0.1}s">
-        <div class="flex flex-col items-center gap-1 flex-shrink-0 pt-1">
-          <div class="tl-dot ${item.color}"></div>
-          ${i < D.timeline.length-1 ? '<div class="w-px flex-1 bg-gray-800 min-h-[40px]"></div>' : ''}
-        </div>
-        <div class="pb-6">
-          <div class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-1">${item.year}</div>
-          <div class="text-white font-bold text-base">${item.label}</div>
-          <div class="text-gray-400 text-sm mt-1">${item.sub}</div>
+      <div class="relative flex gap-6 mb-10">
+        <div class="z-10 w-16 h-16 flex-shrink-0 rounded-full bg-gradient-to-br ${item.grad} flex items-center justify-center text-xl shadow-lg">${item.icon}</div>
+        <div class="flex-1 bg-gray-900/50 border border-gray-800 rounded-xl p-5 hover:border-cyan-500/30 transition-colors">
+          <div class="text-xs ${item.accent} font-bold mb-1">${item.year}</div>
+          <div class="text-white font-bold text-lg">${item.label}</div>
+          <div class="text-gray-400 text-sm">${item.sub}</div>
         </div>
       </div>`);
   });
-  initReveal();
 }
 renderTimeline();
 
-/* ── TYPING EFFECT ── */
+/* ══════════════════════════════════════════
+   TYPING EFFECT (titres dynamiques depuis D.profil.titles)
+══════════════════════════════════════════ */
 (function() {
   const el = document.getElementById('typed');
   const titles = (D.profil.titles || 'Finance Digitale|Data Analyst|Vibe Coder|FinTech Builder').split('|');
@@ -526,23 +495,27 @@ renderTimeline();
     const c = titles[ti];
     if (!del) {
       el.textContent = c.slice(0, ++ci);
-      if (ci === c.length) { del=true; setTimeout(loop, 2200); return; }
+      if (ci === c.length) { del=true; setTimeout(loop, 2000); return; }
     } else {
       el.textContent = c.slice(0, --ci);
       if (ci === 0) { del=false; ti=(ti+1)%titles.length; }
     }
-    setTimeout(loop, del ? 35 : 65);
+    setTimeout(loop, del ? 40 : 65);
   }
   loop();
 })();
 
-/* ── COUNTERS ── */
+/* ══════════════════════════════════════════
+   COMPTEURS ANIMÉS — 100% DYNAMIQUES
+══════════════════════════════════════════ */
 function onVis(id, cb) {
   const o = new IntersectionObserver(e => { if(e[0].isIntersecting){cb();o.disconnect();} }, {threshold:.2});
-  const el = document.getElementById(id); if (el) o.observe(el);
+  const el = document.getElementById(id);
+  if (el) o.observe(el);
 }
+
 onVis('hero', () => {
-  const stats = D.profil.stats || DEFAULTS.profil.stats;
+  const stats = (D.profil && D.profil.stats) ? D.profil.stats : DEFAULTS.profil.stats;
   stats.forEach((s, i) => {
     const el = document.getElementById('c'+(i+1));
     if (!el) return;
@@ -550,17 +523,21 @@ onVis('hero', () => {
     const target = Number(s.v) || 0;
     const sfx = s.s || '';
     const t = setInterval(() => {
-      v += target / 50;
+      v += target / 60;
       if (v >= target) { el.textContent = target + sfx; clearInterval(t); }
       else el.textContent = Math.floor(v) + sfx;
-    }, 20);
+    }, 16);
   });
 });
 
-/* ── SKILL BARS ── */
+/* ══════════════════════════════════════════
+   SKILL BARS AU SCROLL
+══════════════════════════════════════════ */
 onVis('skills', () => document.querySelectorAll('.skill-bar').forEach(b => b.classList.add('go')));
 
-/* ── FILTER SKILLS ── */
+/* ══════════════════════════════════════════
+   FILTRE COMPÉTENCES
+══════════════════════════════════════════ */
 function filterSkills(cat, btn) {
   document.querySelectorAll('.fbtn').forEach(b => {
     b.className = 'fbtn px-5 py-2 rounded-full text-sm font-semibold border border-gray-700 text-gray-400 hover:border-cyan-500';
@@ -570,42 +547,6 @@ function filterSkills(cat, btn) {
     item.style.display = (cat==='Tous' || item.dataset.cat===cat) ? 'block' : 'none';
   });
 }
-
-/* ── REVEAL ON SCROLL ── */
-function initReveal() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
-}
-initReveal();
-
-/* ── NAV SCROLL STYLE ── */
-window.addEventListener('scroll', () => {
-  const nav = document.querySelector('nav');
-  if (window.scrollY > 50) nav.style.borderBottomColor = 'rgba(34,211,238,.12)';
-  else nav.style.borderBottomColor = 'rgba(255,255,255,.05)';
-});
-
-/* ── PARTICULES FLOTTANTES ── */
-(function() {
-  const container = document.getElementById('particles');
-  for (let i = 0; i < 18; i++) {
-    const p = document.createElement('div');
-    const size = Math.random() * 3 + 1;
-    p.className = 'particle';
-    p.style.cssText = `
-      left:${Math.random()*100}%;
-      bottom:-10px;
-      width:${size}px;
-      height:${size}px;
-      background:rgba(34,211,238,${Math.random()*.25+.05});
-      animation-duration:${Math.random()*15+10}s;
-      animation-delay:${Math.random()*10}s;
-    `;
-    container.appendChild(p);
-  }
-})();
 </script>
 </body>
 </html>
