@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
+Disallow: /portfolio_admin.html
+
 Sitemap: https://florentjauresb.github.io/florentjb/sitemap.xml
