@@ -1,0 +1,27 @@
+# Base44 sandbox / development compose for this repository.
+#
+# The project is a static portfolio site (single index.html + assets, no build
+# step, no backend, no database). The app service therefore serves the cloned
+# source directly from the bind mount with a plain nginx base image, so every
+# edit is visible on refresh without any image rebuild.
+#
+# Usage: docker compose -f docker-compose.base44.yml up -d --build
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "3000:80"
+    volumes:
+      # Serve the cloned source live (read-only, no copy into the image).
+      - ./:/usr/share/nginx/html:ro
+      # Disable client caching so the preview always shows the current source.
+      - ./.base44/nginx.conf:/etc/nginx/nginx.conf:ro
+    healthcheck:
+      # 127.0.0.1 (not localhost): nginx listens on IPv4 only here, and localhost
+      # resolves to ::1 first inside this image.
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1/ | grep -q '</html>' || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+    restart: on-failure
